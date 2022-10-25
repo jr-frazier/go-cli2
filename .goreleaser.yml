@@ -1,0 +1,32 @@
+builds:
+  - binary: go-cli2
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=vendor
+
+release:
+  prerelease: auto
+
+universal_binaries:
+  - replace: true
+
+brews:
+  -
+    name: go-cli2
+    homepage: https://github.com/jr-frazier/go-cli2
+    tap:
+      owner: jr-frazier
+      name: homebrew-jr-frazier
+    commit_author:
+      name: jrFrazier
+      email: jrfrazier.dev@gmail.com
+
+checksum:
+  name_template: 'checksums.txt'
