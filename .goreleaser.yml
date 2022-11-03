@@ -27,12 +27,26 @@ brews:
     commit_author:
       name: jrFrazier
       email: jrfrazier.dev@gmail.com
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
 nfpms:
   - maintainer: "JR Frazier"
     formats:
       - deb
       - rpm
       - apk
-
-checksum:
-  name_template: 'checksums.txt'
