@@ -27,6 +27,12 @@ brews:
     commit_author:
       name: jrFrazier
       email: jrfrazier.dev@gmail.com
+nfpms:
+  - maintainer: "JR Frazier"
+    formats:
+      - deb
+      - rpm
+      - apk
 
 checksum:
   name_template: 'checksums.txt'
