@@ -12,6 +12,18 @@ permissions:
   # issues: write
 
 jobs:
+  test-package:
+    if: ${{ !contains(github.event.head_commit.message, 'skip ci') }}
+    runs-on: ubuntu-latest
+    name: test-package
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Go 1.11 and Test
+        uses: cedrickring/golang-action/go1.11@1.6.0
+        env:
+          IMPORT: "jr-frazier/go-cli2"
   goreleaser:
     runs-on: ubuntu-latest
     steps:
