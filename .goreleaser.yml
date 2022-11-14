@@ -1,5 +1,5 @@
 builds:
-  - binary: go-cli2
+  - binary: gocli2
     goos:
       - darwin
       - linux
@@ -19,7 +19,7 @@ universal_binaries:
 
 brews:
   -
-    name: go-cli2
+    name: gocli2
     homepage: https://github.com/jr-frazier/go-cli2
     tap:
       owner: jr-frazier
