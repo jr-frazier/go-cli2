@@ -43,6 +43,7 @@ changelog:
       - '^test:'
 nfpms:
   - maintainer: "JR Frazier"
+    package_name: "gocli2"
     formats:
       - deb
       - rpm
