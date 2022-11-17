@@ -52,7 +52,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: goreleaser-deb
-          path: dist/gocli2_${{ GITHUB_REF_NAME:1 }}_linux_arm64.deb
+          path: dist/gocli2_${{ env.GITHUB_REF_NAME:1 }}_linux_arm64.deb
 
   deploy:
     needs: goreleaser
