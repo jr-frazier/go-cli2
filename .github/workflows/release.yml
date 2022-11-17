@@ -48,11 +48,12 @@ jobs:
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro'
           # distribution:
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
-      - run: echo gocli2_${GITHUB_REF_NAME:1}_linux_arm64.deb
-      - uses: actions/upload-artifact@v2
-        with:
-          name: goreleaser-deb
-          path: dist/gocli2_${{ env.GITHUB_REF_NAME:1 }}_linux_arm64.deb
+      - run: echo "VERSION_NAME=${GITHUB_REF_NAME:1}" >> $GITHUB_ENV
+      - run: echo $VERSION_NAME
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: goreleaser-deb
+#          path: dist/gocli2_${{ env.GITHUB_REF_NAME:1 }}_linux_arm64.deb
 
   deploy:
     needs: goreleaser
