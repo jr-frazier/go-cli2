@@ -71,5 +71,5 @@ jobs:
           PACKAGECLOUD-USERNAME: p1
           PACKAGECLOUD-REPO: gocli2
           PACKAGECLOUD-DISTRIB: ubuntu/jammy
-          PACKAGECLOUD-TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+          PACKAGECLOUD-TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
 
