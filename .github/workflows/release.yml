@@ -51,7 +51,7 @@ jobs:
 
       - run: ls -la
   deploy:
-#    needs: goreleaser
+    needs: goreleaser
     runs-on: ubuntu-latest
     steps:
       - run: ls -la
