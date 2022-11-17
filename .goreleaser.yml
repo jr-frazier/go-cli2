@@ -15,8 +15,7 @@ release:
   prerelease: auto
 
 brews:
-  -
-    name: gocli2
+  - name: gocli2
     homepage: https://github.com/jr-frazier/go-cli2
     tap:
       owner: jr-frazier
