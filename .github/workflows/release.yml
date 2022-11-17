@@ -62,13 +62,14 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: goreleaser-deb
-
+      - run: echo "VERSION_NAME=${GITHUB_REF_NAME:1}" >> $GITHUB_ENV
+      - run: echo gocli2_${{ env.VERSION_NAME }}_linux_arm64.deb
       - run: ls -la
-#      - uses: actions/push-to-packagecloud
-#        with:
-#          PACKAGE-NAME: gocli2_0.3.12_linux_amd64.deb
-#          PACKAGECLOUD-USERNAME: p1
-#          PACKAGECLOUD-REPO: gocli2
-#          PACKAGECLOUD-DISTRIB: ubuntu/jammy
-#          PACKAGECLOUD-TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
+      - uses: actions/push-to-packagecloud
+        with:
+          PACKAGE-NAME: gocli2_${{ env.VERSION_NAME }}_linux_arm64.deb
+          PACKAGECLOUD-USERNAME: p1
+          PACKAGECLOUD-REPO: gocli2
+          PACKAGECLOUD-DISTRIB: ubuntu/jammy
+          PACKAGECLOUD-TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
 
