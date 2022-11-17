@@ -54,7 +54,7 @@ jobs:
 #    needs: goreleaser
     runs-on: ubuntu-latest
     steps:
-      -run: ls -la
+      - run: ls -la
 #      - uses: actions/upload-artifact@v2
 #        with:
 #          name: gocli2_0.3.12_linux_amd64.deb
