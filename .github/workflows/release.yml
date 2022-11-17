@@ -48,19 +48,19 @@ jobs:
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro'
           # distribution:
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
-#  deploy-to-packagecloud:
-#    needs: goreleaser
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/upload-artifact@v2
-#        with:
-#          name: gocli2_0.3.12_linux_amd64.deb
-#          path: gocli2_0.3.12_linux_amd64.deb
-#      - uses: actions/push-to-packagecloud
-#        with:
-#          PACKAGE-NAME: gocli2_0.3.12_linux_amd64.deb
-#          PACKAGECLOUD-USERNAME: p1
-#          PACKAGECLOUD-REPO: gocli2
-#          PACKAGECLOUD-DISTRIB: ubuntu/jammy
-#          PACKAGECLOUD-TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
+  deploy:
+    needs: goreleaser
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v2
+        with:
+          name: gocli2_0.3.12_linux_amd64.deb
+          path: gocli2_0.3.12_linux_amd64.deb
+      - uses: actions/push-to-packagecloud
+        with:
+          PACKAGE-NAME: gocli2_0.3.12_linux_amd64.deb
+          PACKAGECLOUD-USERNAME: p1
+          PACKAGECLOUD-REPO: gocli2
+          PACKAGECLOUD-DISTRIB: ubuntu/jammy
+          PACKAGECLOUD-TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
 
