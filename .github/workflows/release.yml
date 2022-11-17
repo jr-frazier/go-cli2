@@ -49,20 +49,20 @@ jobs:
           # distribution:
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
       - run: echo gocli2_${GITHUB_REF_NAME:1}_linux_arm64.deb
-#      - uses: actions/upload-artifact@v2
-#        with:
-#          name: goreleaser-deb
-#          path: dist/gocli2_0.3.20_linux_arm64.deb
+      - uses: actions/upload-artifact@v2
+        with:
+          name: goreleaser-deb
+          path: dist/gocli2_${GITHUB_REF_NAME:1}_linux_arm64.deb
 
-#  deploy:
-#    needs: goreleaser
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/upload-artifact@v2
-#        with:
-#          name: gocli2_0.3.12_linux_amd64.deb
-#          path: gocli2_0.3.12_linux_amd64.deb
-#      - run: ls -la
+  deploy:
+    needs: goreleaser
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: goreleaser-deb
+
+      - run: ls -la
 #      - uses: actions/push-to-packagecloud
 #        with:
 #          PACKAGE-NAME: gocli2_0.3.12_linux_amd64.deb
