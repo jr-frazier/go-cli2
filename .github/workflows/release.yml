@@ -48,7 +48,7 @@ jobs:
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro'
           # distribution:
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
-      - run: echo ${{ env.GITHUB_REF_NAME }}
+      - run: echo "Ref Name = $GITHUB_REF_NAME"
 #      - uses: actions/upload-artifact@v2
 #        with:
 #          name: goreleaser-deb
