@@ -1,0 +1,12 @@
+name: Release
+
+on: [ push, pull_request ]
+
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World"
+      - run: echo "YOOOOOOOOOOOOOOOOOOOOOOOOOOO"
