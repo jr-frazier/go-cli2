@@ -67,7 +67,7 @@ jobs:
       - run: ls -la
       - uses: jr-frazier/upload-packagecloud@v1
         with:
-          PACKAGE-NAME: gocli2_${{ env.VERSION_NAME }}_linux_arm64.deb
+          DEB-PACKAGE-NAME: gocli2_${{ env.VERSION_NAME }}_linux_arm64.deb
           PACKAGECLOUD-USERNAME: p1
           PACKAGECLOUD-REPO: gocli2
           PACKAGECLOUD-TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
