@@ -65,7 +65,7 @@ jobs:
       - run: echo "VERSION_NAME=${GITHUB_REF_NAME:1}" >> $GITHUB_ENV
       - run: echo gocli2_${{ env.VERSION_NAME }}_linux_arm64.deb
       - run: ls -la
-      - uses: jr-frazier/push-to-pc@main
+      - uses: jr-frazier/upload-packagecloud@v1
         with:
           PACKAGE-NAME: gocli2_${{ env.VERSION_NAME }}_linux_arm64.deb
           PACKAGECLOUD-USERNAME: p1
